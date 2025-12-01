@@ -1,0 +1,18 @@
+<div class="stock-container" 
+     [class]="isAvailable ? 'available' : 'unavailable'">
+    
+    <img [src]="'https://images.unsplash.com/photo-1652262147172-142284cf5a6f?q=80&w=2053&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'" alt="{{imageUrl}}" style="width: 100px; height: 100px; object-fit: cover; margin: 10px 0;">
+
+    <div class="name"><h3>{{name}}</h3></div>
+    
+    <div class="price">{{price}} €</div>
+
+    <div class="botones">
+        <button (click)="reducirCantidad()" [disabled]="quantityInCart === 0" class="boton-reducir">-</button>
+
+        <span class="quantity-display">{{ quantityInCart }}</span>
+        <button (click)="aumentarCantidad()" class="boton-aumentar">+</button>
+
+    </div>
+    
+</div>
