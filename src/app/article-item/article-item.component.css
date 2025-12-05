@@ -16,3 +16,7 @@
 .unavailable {
   background-color: white;
 }
+
+.price-disabled{
+    color: grey;
+}

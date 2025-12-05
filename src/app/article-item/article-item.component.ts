@@ -16,7 +16,7 @@ export class ArticleItemComponent implements OnInit {
   public quantityInCart: number = 0;
   public stock: number = 0;
   public isAvailable: boolean = false;
-
+  public priceDetails: any;
 
 constructor() { }
 
@@ -27,7 +27,9 @@ ngOnInit() {
     this.isOnSale= true
     this.quantityInCart= 15
     this.isAvailable = this.stock > 0;
-    };
+    this.isAvailable = this.stock > 0;
+    this.updatePriceDetails();    
+  };
 
   aumentarCantidad() {
     if (this.stock > 0) {
@@ -35,6 +37,12 @@ ngOnInit() {
     this.stock--;
     this.isAvailable = this.stock > 0;
     }
+
+    if (this.stock === 0) {
+    this.isOnSale = false;
+    this.updatePriceDetails(); 
+    }
+
   }
 
   reducirCantidad() {
@@ -43,5 +51,16 @@ ngOnInit() {
     this.stock++;
     this.isAvailable = this.stock > 0;
     }
+
+    if (this.stock > 0 && !this.isOnSale) {
+    this.isOnSale = true;
+    this.updatePriceDetails(); 
+  }
+  }
+
+  updatePriceDetails() {
+    this.priceDetails = {
+        "price-disabled": !this.isOnSale 
+    };
   }
 }
