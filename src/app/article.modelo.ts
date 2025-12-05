@@ -5,5 +5,5 @@ export interface Article{
     isOnSale: boolean;
     quantiyInCart:number;
     stock: number;
-    isAvailable: boolean;
+    id: number;
 }

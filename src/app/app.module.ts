@@ -1,21 +1,22 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms'; 
 
 import { AppComponent } from './app.component';
+import { ArticleListComponent } from './article-list/article-list.component'; 
 import { ArticleItemComponent } from './article-item/article-item.component';
 
-@NgModule({                            
+@NgModule({
   declarations: [
     AppComponent,
+    ArticleListComponent,
     ArticleItemComponent
   ],
-  imports: [                           
+  imports: [
     BrowserModule,
-    CommonModule
+    FormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]            
+  bootstrap: [AppComponent]
 })
-
 export class AppModule { }

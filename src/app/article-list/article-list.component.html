@@ -1,0 +1,10 @@
+<div class="list-container">
+    <h1 class="list-title">Perfumes de mujer</h1>
+    <div class="article-grid">
+        <app-article-item 
+            *ngFor="let item of articles" 
+            [article]="item"
+            (quantityChange)="onQuantityChange($event)"> 
+        </app-article-item>
+    </div>
+</div>
